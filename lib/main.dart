@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/categories_screen.dart';
 import './screens/categories_meals_screen.dart';
 import './screens/meal_detail_screen.dart';
+import 'screens/tabs_screen.dart';
 import 'utils/app_routes.dart';
 
 void main() => runApp(MyApp());
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.pink,
           secondary: Colors.amber,
+          tertiary: Colors.white,
           surface: Color.fromRGBO(255, 254, 229, 1),
         ),
         fontFamily: 'Raleway',
@@ -49,11 +51,18 @@ class MyApp extends StatelessWidget {
             fontSize: 20,
             fontFamily: 'RobotoCondensed',
             fontWeight: FontWeight.bold,
-          ),
+          )
+          
         ),
+        tabBarTheme: TabBarTheme(
+          labelColor: Colors.amber,
+          unselectedLabelColor: Colors.white,
+          indicatorColor: Colors.amber,
+          indicatorSize: TabBarIndicatorSize.tab,
+        )
       ),
       routes: {
-        AppRoutes.HOME: (ctx) => CategoriesScreen(),
+        AppRoutes.HOME: (ctx) => TabsScreen(),
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
       },
