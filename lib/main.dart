@@ -3,8 +3,9 @@ import 'screens/categories_screen.dart';
 import './screens/categories_meals_screen.dart';
 import './screens/meal_detail_screen.dart';
 import 'utils/app_routes.dart';
+
 void main() => runApp(MyApp());
- 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -21,22 +22,35 @@ class MyApp extends StatelessWidget {
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.bold,
-          )
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.pink,
           secondary: Colors.amber,
-          surface: Color.fromRGBO(255, 254, 229, 1), 
-          
+          surface: Color.fromRGBO(255, 254, 229, 1),
         ),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
           titleLarge: TextStyle(
             fontSize: 20,
             fontFamily: 'RobotoCondensed',
-            // color: Colors.white
-          )
-        )
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+            // shadows: <Shadow>[
+            //   Shadow(
+            //     offset: Offset(1.5, 1.5),
+            //     blurRadius: 0.0,
+            //     color: Color.fromARGB(255, 0, 0, 0),
+            //   ),
+            // ],
+          ),
+          titleMedium: TextStyle(
+            fontSize: 20,
+            fontFamily: 'RobotoCondensed',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       routes: {
         AppRoutes.HOME: (ctx) => CategoriesScreen(),
